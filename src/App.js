@@ -79,7 +79,7 @@ function App() {
     }
     try{
       let res = axios.get(`https://run.mocky.io/v3/${apiKey}`)
-      dummy.forEach(item => {
+      res.data.data.forEach(item => {
         const category = item['status'];
         if (categories.hasOwnProperty(category)) {
           categories[category].push(item)
@@ -97,13 +97,9 @@ function App() {
   return (
     <div className="App">
       <div className='dashboard'>
-        {
-          candidateData.map((type, data) => {
-            return <ListView type={type} candidatesList={data}/>
-          })
-        }
-        {/* <ListView type="accepted" candidatesList={candidateData[translations['accepted']]}/> */}
-        {/* <ListView type="rejected" candidatesList={candidateData[translations['rejected']]}/> */}
+        <ListView type="applied" candidatesList={candidateData[translations['applied']]}/>
+        <ListView type="accepted" candidatesList={candidateData[translations['accepted']]}/>
+        <ListView type="rejected" candidatesList={candidateData[translations['rejected']]}/>
       </div>
     </div>
   )
