@@ -10,16 +10,19 @@ const apiKey = 'ae511409-8c0e-40ed-9336-aebcb602823d';
 function App() {
   const [candidateData, setCandidateData] = useState({})
 
-  useEffect(() => {
+  
+  useEffect(async () => {
     const categories = {
       'Applied': [],
       'Accepted': [],
       'Rejected': []
     }
     try{
-      let res = axios.get(`https://run.mocky.io/v3/${apiKey}`)
+      let res = await axios.get(`https://run.mocky.io/v3/${apiKey}`)
+      console.log()
       res.data.data.forEach(item => {
-        const category = item['status'];
+        let category = item['status']
+        console.log(category)
         if (categories.hasOwnProperty(category)) {
           categories[category].push(item)
         } else {
