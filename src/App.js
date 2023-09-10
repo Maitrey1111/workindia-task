@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+        <div className="card-list-container">
+          <div className="column">
+            <h2>Column 1</h2>
+            Hi
+          </div>
+          <div className="column">
+            <h2>Column 2</h2>
+            <div className="card-list">
+
+            </div>
+          </div>
+          <div className="column">
+            <h2>Column 3</h2>
+            <div className="card-list">
+
+            </div>
+          </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+//<h2>Column 1</h2>
+//<div className="card-list">
+  //{data.column1.map((item, index) => (
+    //<div className="card" key={index}>
+      //{/* Render card content here */}
+      //{/* <h3>{item.title}</h3>
+      //<p>{item.description}</p> */}
+    //</div>
+//  ))}
+//</div>
